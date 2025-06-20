@@ -1,0 +1,350 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
+
+.app {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 1rem;
+  min-height: 100vh;
+}
+
+.app-header {
+  text-align: center;
+  margin-bottom: 2rem;
+  padding: 1rem;
+  border: 2px solid #ffffff;
+  background-color: #001122;
+}
+
+.app-header h1 {
+  margin: 0;
+  font-size: 2.5em;
+  color: #ffffff;
+  text-shadow: 3px 3px 0px #ff0000;
+}
+
+.subtitle {
+  margin: 0.5rem 0 0 0;
+  font-size: 0.8em;
+  color: #ffffff;
+  opacity: 0.8;
+  letter-spacing: 2px;
+}
+
+.app-main {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.mood-input-section,
+.stats-section,
+.history-section {
+  border: 2px solid #ffffff;
+  background-color: #001122;
+  padding: 1.5rem;
+}
+
+.mood-input-section h2,
+.stats-section h2,
+.history-section h2 {
+  margin: 0 0 1.5rem 0;
+  font-size: 1.2em;
+  color: #ffffff;
+  text-align: center;
+  text-shadow: 2px 2px 0px #ff0000;
+}
+
+.mood-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.mood-button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem;
+  border: 2px solid #ffffff;
+  background-color: #001122;
+  color: #ffffff;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-family: 'Press Start 2P', 'Courier New', monospace;
+  font-size: 0.7em;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.mood-button:hover {
+  background-color: var(--mood-color);
+  color: #000000;
+  transform: scale(1.05);
+  border-color: var(--mood-color);
+}
+
+.mood-button.selected {
+  background-color: var(--mood-color);
+  color: #000000;
+  border-color: var(--mood-color);
+  box-shadow: 0 0 10px var(--mood-color);
+}
+
+.mood-emoji {
+  font-size: 2em;
+  margin-bottom: 0.5rem;
+}
+
+.mood-label {
+  font-size: 0.6em;
+  text-align: center;
+  line-height: 1.2;
+}
+
+.note-section {
+  border-top: 2px solid #ffffff;
+  padding-top: 1.5rem;
+}
+
+.note-section h3 {
+  margin: 0 0 1rem 0;
+  font-size: 0.9em;
+  color: #ffffff;
+  text-align: center;
+}
+
+.note-input {
+  width: 100%;
+  min-height: 100px;
+  padding: 1rem;
+  border: 2px solid #ffffff;
+  background-color: #4f0505;
+  color: #ffffff;
+  font-family: 'Press Start 2P', 'Courier New', monospace;
+  font-size: 0.7em;
+  resize: vertical;
+  box-sizing: border-box;
+}
+
+.note-input:focus {
+  outline: 3px solid #ff0000;
+  outline-offset: 2px;
+}
+
+.note-input::placeholder {
+  color: #666666;
+}
+
+.note-counter {
+  text-align: right;
+  font-size: 0.6em;
+  color: #ffffff;
+  margin: 0.5rem 0;
+}
+
+.save-button {
+  width: 100%;
+  padding: 1rem;
+  background-color: #ff0000;
+  color: #ffffff;
+  border: 2px solid #ff0000;
+  font-family: 'Press Start 2P', 'Courier New', monospace;
+  font-size: 0.8em;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.save-button:hover {
+  background-color: #ffffff;
+  color: #ff0000;
+  transform: scale(1.02);
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  gap: 1rem;
+}
+
+.stat-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem;
+  border: 1px solid #ffffff;
+  background-color: #4f0505;
+}
+
+.stat-emoji {
+  font-size: 1.5em;
+  margin-bottom: 0.5rem;
+}
+
+.stat-count {
+  font-size: 1.5em;
+  font-weight: bold;
+  color: #ffffff;
+  margin-bottom: 0.5rem;
+}
+
+.stat-label {
+  font-size: 0.6em;
+  color: #ffffff;
+  text-align: center;
+  line-height: 1.2;
+}
+
+.mood-history {
+  max-height: 400px;
+  overflow-y: auto;
+  border: 1px solid #ffffff;
+  background-color: #4f0505;
+}
+
+.no-moods {
+  text-align: center;
+  color: #ffffff;
+  padding: 2rem;
+  font-size: 0.8em;
+  opacity: 0.7;
+}
+
+.mood-entry {
+  border-bottom: 1px solid #ffffff;
+  padding: 1rem;
+  background-color: #001122;
+}
+
+.mood-entry:last-child {
+  border-bottom: none;
+}
+
+.mood-entry-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+}
+
+.mood-entry-emoji {
+  font-size: 1.5em;
+}
+
+.mood-entry-date {
+  font-size: 0.7em;
+  color: #ffffff;
+  font-family: 'Press Start 2P', 'Courier New', monospace;
+}
+
+.delete-button {
+  background-color: #ff0000;
+  color: #ffffff;
+  border: 1px solid #ff0000;
+  padding: 0.3rem 0.6rem;
+  font-size: 0.6em;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.delete-button:hover {
+  background-color: #ffffff;
+  color: #ff0000;
+}
+
+.mood-entry-note {
+  margin: 0;
+  font-size: 0.7em;
+  color: #ffffff;
+  opacity: 0.8;
+  line-height: 1.4;
+  font-family: 'Courier New', monospace;
+}
+
+/* Scrollbar styling */
+.mood-history::-webkit-scrollbar {
+  width: 8px;
+}
+
+.mood-history::-webkit-scrollbar-track {
+  background: #4f0505;
+}
+
+.mood-history::-webkit-scrollbar-thumb {
+  background: #ff0000;
+  border: 1px solid #ffffff;
+}
+
+.mood-history::-webkit-scrollbar-thumb:hover {
+  background: #ffffff;
+}
+
+/* Responsive design */
+@media (max-width: 600px) {
+  .app {
+    padding: 0.5rem;
+  }
+  
+  .app-header h1 {
+    font-size: 1.8em;
+  }
+  
+  .mood-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .mood-button {
+    padding: 0.8rem;
+  }
+  
+  .mood-emoji {
+    font-size: 1.5em;
+  }
+}
