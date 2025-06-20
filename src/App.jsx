@@ -8,11 +8,11 @@ function App() {
   const [currentDate] = useState(new Date().toISOString().split('T')[0])
 
   const moodOptions = [
-    { id: 'excellent', label: 'EXCELLENT', emoji: '😄', color: '#00ff00' },
-    { id: 'good', label: 'GOOD', emoji: '🙂', color: '#87ceeb' },
-    { id: 'okay', label: 'OKAY', emoji: '😐', color: '#ffff00' },
-    { id: 'bad', label: 'BAD', emoji: '😞', color: '#ffa500' },
-    { id: 'terrible', label: 'TERRIBLE', emoji: '😭', color: '#ff0000' }
+    { id: 'excellent', label: 'Excellent', emoji: '😄', color: '#a8e6cf' },
+    { id: 'good', label: 'Good', emoji: '🙂', color: '#b8d4e3' },
+    { id: 'okay', label: 'Okay', emoji: '😐', color: '#f7d794' },
+    { id: 'bad', label: 'Bad', emoji: '😞', color: '#f4a261' },
+    { id: 'terrible', label: 'Terrible', emoji: '😭', color: '#e76f51' }
   ]
 
   useEffect(() => {
@@ -68,13 +68,13 @@ function App() {
   return (
     <div className="app">
       <header className="app-header">
-        <h1>MOOD TRACKER</h1>
-        <p className="subtitle">TRACK YOUR DAILY VIBES</p>
+        <h1>Mood Tracker</h1>
+        <p className="subtitle">Track your daily vibes</p>
       </header>
 
       <main className="app-main">
         <section className="mood-input-section">
-          <h2>HOW ARE YOU FEELING TODAY?</h2>
+          <h2>How are you feeling today?</h2>
           <div className="mood-grid">
             {moodOptions.map((mood) => (
               <button
@@ -91,24 +91,24 @@ function App() {
 
           {selectedMood && (
             <div className="note-section">
-              <h3>ADD A NOTE (OPTIONAL)</h3>
+              <h3>Add a note (optional)</h3>
               <textarea
                 value={note}
                 onChange={(e) => setNote(e.target.value)}
-                placeholder="WHAT'S ON YOUR MIND?"
+                placeholder="What's on your mind?"
                 maxLength={200}
                 className="note-input"
               />
               <div className="note-counter">{note.length}/200</div>
               <button onClick={saveMood} className="save-button">
-                SAVE MOOD
+                Save Mood
               </button>
             </div>
           )}
         </section>
 
         <section className="stats-section">
-          <h2>LAST 7 DAYS</h2>
+          <h2>Last 7 Days</h2>
           <div className="stats-grid">
             {moodOptions.map((mood) => (
               <div key={mood.id} className="stat-item">
@@ -121,10 +121,10 @@ function App() {
         </section>
 
         <section className="history-section">
-          <h2>MOOD HISTORY</h2>
+          <h2>Mood History</h2>
           <div className="mood-history">
             {moods.length === 0 ? (
-              <p className="no-moods">NO MOODS TRACKED YET</p>
+              <p className="no-moods">No moods tracked yet</p>
             ) : (
               moods.slice().reverse().map((moodEntry) => (
                 <div key={moodEntry.id} className="mood-entry">
